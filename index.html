@@ -291,8 +291,7 @@
             body: JSON.stringify(body),
             headers: {
                 "Content-Type": "application/json",
-                
-
+                "Access-Control-Allow-Origin":"https://bhaskarjha514.github.io"
             }
         }).then((response) => response.json())
         .then((json) => {

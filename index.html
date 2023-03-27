@@ -1,0 +1,356 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins',sans-serif;
+  }
+  body{
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(123deg, #71b8e7,#9b59b6);
+  }
+  .container{
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+  }
+  .container  .title{
+      font-size: 25px;
+      font-weight: 500; 
+      position: relative;
+  }
+  .container .title::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      background: linear-gradient(123deg, #71b8e7,#9b59b6);
+  }
+  .container .form .user_details{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  .form .user_details .input_pox{
+      margin-bottom: 15px;
+      margin: 20px 0 12px 0;
+      width: calc(100% / 2 - 20px);
+  }
+  .user_details .input_pox .datails{
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+  }
+  .user_details .input_pox input{
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding-left: 15px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+  
+  }
+  .user_details .input_pox input:focus,
+  .user_details .input_pox input:valid{
+  border-color: #9b59b6;
+  }
+  .form .gender_details .gender_title{
+      font-size: 20px;
+      font-weight: 500;
+  }
+  .form .gender_details .category{
+      display: flex;
+      width: 80%;
+      margin: 14px 0;
+      justify-content: space-between;
+  }
+  .gender_details .category label{
+        display: flex;
+  }
+  .gender_details .category .dot{
+  height: 18px;
+  width: 18px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 5px solid transparent;
+  }
+  #dot-1:checked ~ .category label .one,
+  #dot-2:checked ~ .category label .two,
+  #dot-3:checked ~ .category label .three{
+  border-color: #d9d9d9;
+  background-color: #9b59b6;
+  }
+  .form input[type="radio"]{
+      display: none;
+  }
+  .form .button{
+      height: 45px;
+      margin: 45px 0;
+  }
+  .form .button button{
+      height: 100%;
+      width: 100%;
+      outline: none;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background: linear-gradient(123deg, #71b8e7,#9b59b6);
+  
+  }
+  .form .button input :hover{
+      background: linear-gradient(-123deg, #71b8e7,#9b59b6);
+  }
+  @media (max-width: 584px){
+      .container{
+          max-width: 100%;
+      }
+      .form .user_details .input_pox{
+          margin-bottom: 15px;
+          width:100%;
+      }
+      .form .gender_details .category{
+          width: 100%;
+      }
+      .container .form .user_details{
+          max-height: 300px;
+          overflow: scroll;
+      }
+      .user_details::-webkit-scrollber{
+       width: 0;
+      }
+  }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Create Order</div>
+        <div class="form">
+            <div class="user_details">
+                <div class="input_pox">
+                    <span class="datails">Full Name</span>
+                    <input type="text" id="name" placeholder="enter your name"  required>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Email</span>
+                    <input type="text" id="email" placeholder="enter your Email"  required>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Phone Number</span>
+                    <input type="text" id="phone" placeholder="enter your Phone"  required>
+                </div>
+                 <div class="input_pox">
+                    <span class="datails">Select Your Service</span>
+                    <select id="service" name="site"  style=height:40px;">
+                    <option disabled value selected>----------Select an option-----------</option>
+                    <option value="Steam Ironing">Steam Ironing</option>
+                    <option value="Wash & Fold/Wash & Iron">Wash & Fold/Wash & Iron</option>
+                    <option value="Dry Cleaning">Dry Cleaning</option>
+                    <option value="Shoe Cleaning">Shoe Cleaning</option>
+                    <option value="Bag Cleaning">Bag Cleaning</option>
+                    <option value="Curtain Cleaning">Curtain Cleaning</option>
+                    <option value="Carpet Cleaning">Carpet Cleaning</option>
+                    <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Date</span>
+                    <input type="Date" id="date" placeholder=""   required>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Time</span>
+                    <input type="Time" id="time" placeholder=""  required>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Country</span>
+                    <select id="country" name="site" style=height:40px;">
+                    <option disabled value selected>----------Select an option-----------</option>
+                    <option> India </option>
+                    </select>
+                </div>
+                 <div class="input_pox">
+                    <span class="datails">State</span>
+                    <select id="state" name="site" style=height:40px;">
+                    <option disabled value selected>----------Select an option-----------</option>
+                    <option> Andhra Pradesh </option>
+                    <option> Bihar </option>
+                    <option> Maharashtra</option>
+                    <option>Punjab</option>
+                    <option>Assam</option>
+                    <option>Tamil Nadu</option>
+                    <option>Haryana</option>
+                    <option>Karnataka</option>
+                    <option>Odisha </option>
+                    <option> Chhattisgarh</option>
+                    <option> Uttar Pradesh</option>
+                    <option>Gujarath</option>
+                    <option>Goa</option>
+                    <option>Madhya pradesh</option>
+                    <option>Manipur</option>
+                    <option>Mizorom</option>
+                    <option>Arunachal pradesh</option>
+                    <option> Kerala</option>
+                    <option>Meghalaya</option>
+                    <option>Rajasthan</option>
+                    <option>Nagaland</option>
+                    <option>West Bengal</option>
+                    <option>Uttarakhand</option>
+                    <option>Tripura</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Sikkim</option>
+                    <option>Jharkhand</option>
+                    <option>Telangana</option>
+                    <option>Delhi</option>
+                    <option>Jammu & Kashmir</option>
+                    </select>
+                </div>
+                   <div class="input_pox">
+                    <span class="datails">City</span>
+                    <input type="text" id="city" placeholder=""  required>
+                </div>
+                  <div class="input_pox">
+                    <span class="datails">Street</span>
+                    <input type="text" id="street" placeholder=""  required>
+                </div>
+                 <div class="input_pox">
+                    <span class="datails">Pincode</span>
+                    <input type="text" id="pincode" placeholder=""  required>
+                </div>
+                 <div class="input_pox">
+                    <span class="datails">Quantity</span>
+                    <input type="Number" id="quantity" placeholder=""  required>
+                </div>
+                 <div class="input_pox">
+                    <span class="datails">Coupon</span>
+                    <input type="text" id="coupon" placeholder=""  required>
+                </div>
+            </div>
+            <div class="button">
+                <button onclick="callMe()">Submit</button>
+                
+            </div>
+        </div>
+    </div>
+<script>
+      var lat ;
+       var lang;
+	function getLocation() {
+		debugger;
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(getPinCode);
+		}
+	}
+    function callMe(){
+        debugger;
+
+        var d = document.getElementById("date").value;
+        var t = document.getElementById("time").value;
+
+        let body = {
+            name:document.getElementById("name").value,
+            phone:document.getElementById("phone").value,
+            email:document.getElementById("email").value,
+            country:document.getElementById("country").value,
+            state:document.getElementById("state").value,
+            city:document.getElementById("city").value,
+            pinCode:document.getElementById("pincode").value,
+            service:document.getElementById("service").value,
+            lat:lat.toString(),
+            longitude:lang.toString(),
+            quantity:document.getElementById("quantity").value
+        };
+        body.pickupDateTime = formatDateTime(d,t);
+
+        console.log('Body----',body);
+
+        fetch("https://sales-production--fsldemo.sandbox.my.salesforce-sites.com/services/apexrest/create_opp",{
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json",
+                
+
+            }
+        }).then((response) => response.json())
+        .then((json) => {
+            console.log(json)
+            alert('Submitted successfully!');
+        });
+      }
+      
+    function formatDateTime(d,t){
+        let sDate = `${d.split('-')[1]}/${d.split('-')[2]}/${d.split('-')[0]},`
+        let hours = t.split(':')[0];
+        let min = t.split(':')[1];
+        let meridem = 'AM';
+
+        if(parseInt(hours)>12){
+            meridem = 'PM';
+            debugger;
+            hours = parseInt(hours) - 12;
+            hours = hours.toString().length==1?`0${hours}`:hours
+        }
+
+        let time = `${hours}:${min} ${meridem}`
+        return `${sDate} ${time}`;
+     }
+      
+
+        async function getPinCode(position) {
+            debugger;
+            if (position) {
+                lat = position.coords.latitude;
+                lang = position.coords.longitude;
+                const response = await fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lang + '&key=AIzaSyB4SPqkO0ZQbxT-EU4l886H9Y3ipf1NMW0');
+                const myJson = await response.json();
+
+                if (myJson.results && myJson.results[0]) {
+                    let pincode;
+
+                    myJson.results[0].address_components.forEach(item => {
+                        debugger;
+
+                        if (item.types[0] == 'postal_code') {
+                            pincode = item.long_name;
+                        }
+                    })
+
+
+
+                    //document.getElementById("pin").innerHTML = `Pin Code : ${pincode}`;
+                }
+
+                console.log(myJson);
+            } else {
+                //document.getElementById("pin").innerHTML = "Please allow the access";
+            }
+        }
+
+        getLocation();
+
+</script>
+</body>
+</html>
